@@ -72,11 +72,9 @@ module Metriks::Reporter
           ]
         when Metriks::Timer
           prepare_metric name, metric, [
-            :count, :one_minute_rate, :five_minute_rate,
-            :fifteen_minute_rate, :mean_rate,
-            :min, :max, :mean, :stddev
+            :count, :mean
           ], [
-            :median, :get_95th_percentile
+            :median, :get_95th_percentile, :get_5_95_span
           ]
         when Metriks::Histogram
           prepare_metric name, metric, [
