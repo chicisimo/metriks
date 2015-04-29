@@ -1,5 +1,6 @@
 module Metriks
   class Snapshot
+    P5_Q = 0.05
     MEDIAN_Q = 0.5
     P75_Q = 0.75
     P95_Q = 0.95
@@ -54,6 +55,10 @@ module Metriks
 
     def get_999th_percentile
       value(P999_Q)
+    end
+
+    def get_5_95_span
+      value(P95_Q) - value(P5_Q)
     end
   end
 end
